@@ -2,6 +2,8 @@
 
 forEach action for [gaffa](https://github.com/gaffa-tape/gaffa-js)
 
+[example](https://rawgit.com/KoryNunn/gaffa-for-each/master/test/test.html) (inspect the source)
+
 ## Install:
 
     npm i gaffa-for-each
