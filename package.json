@@ -25,5 +25,20 @@
     "gaffa-set": "^1.2.0",
     "gaffa-text": "^1.0.0",
     "gel-js": "^1.5.4"
+  },
+  "description": "forEach action for gaffa",
+  "homepage": "https://github.com/KoryNunn/gaffa-for-each",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "crel": "^1.1.2",
+    "gaffa": "^1.9.2",
+    "gaffa-set": "^1.2.0",
+    "gel-js": "^1.5.4",
+    "gaffa-text": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
