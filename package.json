@@ -16,7 +16,14 @@
     "action"
   ],
   "peerDependencies": {
-    "gaffa": "^1.0.0"
+    "gaffa": "^1.5.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "crel": "^1.1.2",
+    "gaffa": "^1.9.1",
+    "gaffa-set": "^1.2.0",
+    "gaffa-text": "^1.0.0",
+    "gel-js": "^1.5.4"
+  }
 }

@@ -3,7 +3,7 @@ var Gaffa = require('gaffa'),
 
 function ForEach(){}
 ForEach = Gaffa.createSpec(ForEach, Gaffa.Action);
-ForEach.prototype.type = actionType;
+ForEach.prototype._type = actionType;
 ForEach.prototype.target = new Gaffa.Property({
     trackKeys:true
 });
@@ -11,7 +11,10 @@ ForEach.prototype.target = new Gaffa.Property({
 ForEach.prototype.trigger = function(parent, scope, event) {
 
     var items = this.target.value,
-        keys = this.target._sourcePathInfo && this.target._sourcePathInfo.subPaths;
+        paths = this.gaffa.gedi.paths,
+        pathInfo = this.target._sourcePathInfo,
+        targetSourcePath = (pathInfo && pathInfo.path) || paths.create(),
+        keys = pathInfo && pathInfo.subPaths;
 
     if(!items){
         return;
@@ -25,7 +28,7 @@ ForEach.prototype.trigger = function(parent, scope, event) {
         var psudoParent = new EachPsudoParent();
         psudoParent.gaffa = this.gaffa;
         psudoParent.parent = this;
-        psudoParent.sourcePath = keys ? keys[i] : '' + i;
+        psudoParent.sourcePath = keys ? keys[i] : paths.append(targetSourcePath, i);
 
         var actions = JSON.parse(JSON.stringify(this.actions['forEach']));
 
@@ -40,6 +43,6 @@ ForEach.prototype.trigger = function(parent, scope, event) {
 
 function EachPsudoParent(){}
 EachPsudoParent = Gaffa.createSpec(EachPsudoParent, Gaffa.Action);
-EachPsudoParent.prototype.type = 'eachPsudoParent';
+EachPsudoParent.prototype._type = 'eachPsudoParent';
 
 module.exports =  ForEach;
