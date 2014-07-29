@@ -1,7 +1,7 @@
 {
   "name": "gaffa-for-each",
   "author": "Kory Nunn <knunn187@gmail.com>",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "forEach.js",
   "repository": {
     "type": "git",
