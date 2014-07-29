@@ -26,8 +26,7 @@ ForEach.prototype.trigger = function(parent, scope, event) {
 
     for(var i = 0; i < items.length; i++){
         var psudoParent = new EachPsudoParent();
-        psudoParent.gaffa = this.gaffa;
-        psudoParent.parent = this;
+        psudoParent.bind(this);
         psudoParent.sourcePath = keys ? keys[i] : paths.append(targetSourcePath, i);
 
         var actions = JSON.parse(JSON.stringify(this.actions['forEach']));
